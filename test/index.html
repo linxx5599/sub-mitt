@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test Submitt</title>
+</head>
+
+<body>
+    <script src="../dist/index.umd.js"></script>
+    <script>
+        const subMitt = new SubMitt();
+        const client = subMitt.createClient();
+        client.sub("MY_TP_1", (_res) => {
+            console.log(_res, '_res');
+        })
+        subMitt.pub("MY_TP_1", 'send...', {
+            persistent: true,
+            type: 0
+        });
+    </script>
+</body>
+
+</html>
